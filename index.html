@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosysteem Actoren: De Fusie & Netwerkanalyse</title>
+    <!-- STREAMING_CHUNK: Inladen van Tailwind en custom configuratie -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hih: {
+                            green: '#1E5939',
+                            orange: '#E35220',
+                            sand: '#F5F2EB',
+                            white: '#FFFFFF',
+                            dark: '#2C3531',
+                            gray: '#555F5A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- STREAMING_CHUNK: Custom CSS voor de 3D Flipcards -->
+    <style>
+        body {
+            background-color: #E5E0D8;
+            color: #2C3531;
+        }
+
+        /* 3D Flip Card CSS */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Styling the specific card sides */
+        .card-front {
+            background-color: #FFFFFF;
+            border-top: 6px solid #1E5939;
+            border-radius: 40px 0 40px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card-back {
+            background-color: #1E5939;
+            color: #FFFFFF;
+            border-bottom: 6px solid #E35220;
+            border-radius: 40px 0 40px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 antialiased">
+
+    <!-- STREAMING_CHUNK: Introductie en Header -->
+    <div class="max-w-7xl mx-auto mb-12">
+        <div class="bg-hih-green text-white p-8 md:p-12 rounded-[40px_0_40px_0] shadow-2xl border-b-8 border-hih-orange relative overflow-hidden">
+            <!-- Decoratieve achtergrond -->
+            <div class="absolute -right-10 -top-10 text-white opacity-5 text-9xl">🔗</div>
+            
+            <div class="inline-block bg-hih-orange text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-widest">
+                Structuur & Organogram Analyse
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black mb-4 leading-tight">
+                De Consortium Strategie
+            </h1>
+            <p class="text-hih-sand text-lg max-w-3xl leading-relaxed">
+                De afbeelding toont vier onafhankelijke vzw's die hun operationele werking (21 plaatsen Beschut Wonen en Dagcentrum De Moester) bundelen onder één coördinator. Dit is een schoolvoorbeeld van de Vlaamse beleidstrend: overhead verkleinen door fusies/consortia, en het vastgoed (Bieënkorf) veilig afscheiden van de zorg.
+            </p>
+        </div>
+    </div>
+
+    <!-- STREAMING_CHUNK: Grid met Flipcards -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1: Hand in Hand -->
+        <div class="flip-card perspective-1000 w-full h-[380px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front absolute w-full h-full backface-hidden">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-2">Hand in Hand vzw</h3>
+                    <div class="text-sm font-bold text-hih-orange uppercase tracking-wider mb-4">De Zorg-Pionier</div>
+                    <p class="text-hih-gray text-sm">Oprichter van De Moester en pionier in de Vlaamse burgerpsychiatrie sinds 1976.</p>
+                </div>
+                <!-- Back -->
+                <div class="card-back absolute w-full h-full backface-hidden rotate-y-180">
+                    <h4 class="text-xl font-black text-hih-orange mb-3 border-b border-white/20 pb-2">Sectorale Context</h4>
+                    <p class="text-sm text-hih-sand leading-relaxed mb-3">
+                        Deze vzw is de historische bron. In de vakliteratuur (zoals via <em>Mental Health Europe</em>) staan zij bekend om hun vroege strijd tegen kille institutionalisering.
+                    </p>
+                    <p class="text-sm text-hih-sand leading-relaxed">
+                        <strong>Strategie in schema:</strong> Ze brengen het merk en de dagbesteding in (De Moester), en verweven dit met de bewoners van de andere initiatieven Beschut Wonen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Thuis vzw -->
+        <div class="flip-card perspective-1000 w-full h-[380px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front absolute w-full h-full backface-hidden" style="border-top-color: #0284c7;">
+                    <div class="text-5xl mb-4">🏠</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-2">Thuis vzw</h3>
+                    <div class="text-sm font-bold text-[#0284c7] uppercase tracking-wider mb-4">Beschut Wonen (IBW)</div>
+                    <p class="text-hih-gray text-sm">Een traditioneel initiatief voor kleinschalig, residentieel begeleid wonen in de regio.</p>
+                </div>
+                <!-- Back -->
+                <div class="card-back absolute w-full h-full backface-hidden rotate-y-180" style="background-color: #0284c7;">
+                    <h4 class="text-xl font-black text-white mb-3 border-b border-white/20 pb-2">Sectorale Context</h4>
+                    <p class="text-sm text-white/90 leading-relaxed mb-3">
+                        In Vlaanderen bestonden er veel kleine Initiatieven Beschut Wonen (IBW) met eigen erkenningen. De overheid stimuleerde deze om samen te gaan werken om efficiënter te worden.
+                    </p>
+                    <p class="text-sm text-white/90 leading-relaxed">
+                        <strong>Strategie in schema:</strong> Door hun 'plaatsen/bedden' in de gezamenlijke pot te steken, vermijden ze dat ze een eigen duredirecteur of boekhouder moeten aannemen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Ipso vzw -->
+        <div class="flip-card perspective-1000 w-full h-[380px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front absolute w-full h-full backface-hidden">
+                    <div class="text-5xl mb-4">🚪</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-2">Ipso vzw</h3>
+                    <div class="text-sm font-bold text-hih-orange uppercase tracking-wider mb-4">Woonbegeleiding</div>
+                    <p class="text-hih-gray text-sm">Gespecialiseerd in begeleid wonen en forensische instroom (i.s.m. PCGS).</p>
+                </div>
+                <!-- Back -->
+                <div class="card-back absolute w-full h-full backface-hidden rotate-y-180">
+                    <h4 class="text-xl font-black text-hih-orange mb-3 border-b border-white/20 pb-2">Sectorale Context</h4>
+                    <p class="text-sm text-hih-sand leading-relaxed mb-3">
+                        Ipso vormt in het GGZ-landschap de cruciale schakel tussen de intensieve kliniek (PCGS) en de samenleving. Ze hebben expertise in het begeleiden van complexe profielen (o.a. ex-gedetineerden/FPC).
+                    </p>
+                    <p class="text-sm text-hih-sand leading-relaxed">
+                        <strong>Strategie in schema:</strong> Ze leveren 'bedden' (capaciteit) aan, terwijl De Moester de broodnodige dagbesteding levert voor diezelfde bewoners.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- STREAMING_CHUNK: Tweede rij kaarten -->
+        
+        <!-- Card 4: De Wende vzw -->
+        <div class="flip-card perspective-1000 w-full h-[380px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front absolute w-full h-full backface-hidden" style="border-top-color: #0284c7;">
+                    <div class="text-5xl mb-4">🔄</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-2">De Wende vzw</h3>
+                    <div class="text-sm font-bold text-[#0284c7] uppercase tracking-wider mb-4">Capaciteits Partner</div>
+                    <p class="text-hih-gray text-sm">Ook een actor uit de residentiële woonzorg die de krachten mee bundelt in dit consortium.</p>
+                </div>
+                <!-- Back -->
+                <div class="card-back absolute w-full h-full backface-hidden rotate-y-180" style="background-color: #0284c7;">
+                    <h4 class="text-xl font-black text-white mb-3 border-b border-white/20 pb-2">Sectorale Context</h4>
+                    <p class="text-sm text-white/90 leading-relaxed mb-3">
+                        Net als Thuis vzw is dit een organisatie die onder de druk van Zorgnet-Icuro (de koepelorganisatie) de logische stap zette om in een netwerk te stappen in plaats van geïsoleerd te blijven werken.
+                    </p>
+                    <p class="text-sm text-white/90 leading-relaxed">
+                        <strong>Strategie in schema:</strong> Ze voegen hun erkenningen (subsidies per inwoner) toe aan het gezamenlijke "Beschut Wonen" blok in het midden.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Het Centraal Blok -->
+        <div class="flip-card perspective-1000 w-full h-[380px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front absolute w-full h-full backface-hidden" style="border-top-color: #d97706; background-color: #fffbeb;">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-2 text-center">Beschut Wonen <br>& De Moester</h3>
+                    <div class="text-sm font-bold text-[#d97706] uppercase tracking-wider mb-4 text-center">De Operationele Motor</div>
+                    <p class="text-hih-gray text-sm text-center font-bold">"21 plaatsen BW / 1 coördinator"</p>
+                </div>
+                <!-- Back -->
+                <div class="card-back absolute w-full h-full backface-hidden rotate-y-180" style="background-color: #d97706;">
+                    <h4 class="text-xl font-black text-white mb-3 border-b border-white/20 pb-2">Sectorale Context</h4>
+                    <p class="text-sm text-white/90 leading-relaxed mb-3">
+                        Dit blok toont het <strong>succes van de fusie</strong>. In plaats van 4 directeurs en 4 administraties, wordt er nu samengewerkt.
+                    </p>
+                    <p class="text-sm text-white/90 leading-relaxed">
+                        <strong>Strategie in schema:</strong> De Vlaamse overheid ('Artikel 107' netwerken) eist dit. Door 21 erkenningen samen te leggen onder 1 coördinator, gaat er minder subsidiegeld naar management, en meer naar échte zorg op de vloer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Bieënkorf vzw -->
+        <div class="flip-card perspective-1000 w-full h-[380px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front absolute w-full h-full backface-hidden" style="border: 2px dashed #555F5A; border-top: 6px dashed #1E5939;">
+                    <div class="text-5xl mb-4">🧱</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-2">Bieënkorf vzw</h3>
+                    <div class="text-sm font-bold text-hih-green uppercase tracking-wider mb-4">Het Patrimonium</div>
+                    <p class="text-hih-gray text-sm">De zuster-vzw die via een stippellijn verbonden is. Zij bezitten en beheren de gebouwen.</p>
+                </div>
+                <!-- Back -->
+                <div class="card-back absolute w-full h-full backface-hidden rotate-y-180" style="background: repeating-linear-gradient(45deg, #1E5939, #1E5939 10px, #154229 10px, #154229 20px);">
+                    <h4 class="text-xl font-black text-hih-orange mb-3 border-b border-white/20 pb-2">Sectorale Context</h4>
+                    <p class="text-sm text-hih-sand leading-relaxed mb-3">
+                        Het is een <em>best practice</em> in de welzijnssector om de 'bakstenen' (vastgoed) te scheiden van de 'handen' (zorgpersoneel en werking).
+                    </p>
+                    <p class="text-sm text-hih-sand leading-relaxed">
+                        <strong>Strategie in schema:</strong> De stippellijn geeft de financiële firewall aan. Mocht een van de zorg-vzw's in financiële problemen komen, of subsidies verliezen, dan is het vastgoed (domein Putstraat/Peerstraat) juridisch beschermd in de Bieënkorf.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+```eof
